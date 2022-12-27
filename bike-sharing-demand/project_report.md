@@ -14,14 +14,14 @@ The `Weighted Ensemble L3` model had the best performance in the third stage of 
 The exploratory analysis showed us that the time variable was not in its ideal format, it was classified as an `object`. Thus, we convert its format to `datetime`, and separate the date into month, day, day of the week and time.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-The performance of the model has improved considerably, before we had a score of approximately $1.852$ and with the addition of temporal variables we obtain $0.670$ This means that time is a very important variable for demand forecasting and we must consider it in the model. This conclusion is quite reasonable, considering that we are dealing with a time series.
+The performance of the model has improved a lot, before we had a score of approximately $1.852$ and with the addition of temporal variables we obtain $0.670$ This means that time is a very important variable for demand forecasting and we must consider it in the model. This conclusion is quite reasonable, considering that we are dealing with a time series.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-TODO: Add your explanation
+With the choice of some hyperparameters, the performance of our model improved significantly. Despite a small change, we know that any improvement is important in competitions. The model before had a score around $0.670$ and went to $0.629$.
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-TODO: Add your explanation
+I would certainly spend more time exploring the data better, and creating new variables for the model, as the variables affected the performance of the model more considerably.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
