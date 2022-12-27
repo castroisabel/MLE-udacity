@@ -4,17 +4,17 @@
 ## Initial Training
 ### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
 
-First of all, competition on Kaggle does not accept negative predictions. Therefore, we must always ensure that our predictions do not have negative values by setting them to 0. Next, we must always send the data in the correct format as specified in the "sampleSubmission.csv" file.
+First of all, competition on Kaggle does not accept negative predictions. Therefore, we must always ensure that our predictions do not have negative values by setting them to $0$. Next, we must always send the data in the correct format as specified in the "sampleSubmission.csv" file.
 
 ### What was the top ranked model that performed?
-The Weighted Ensemble L3 model had the best performance in the third stage of the project, where we created new features and chose some hyperparameters.
+The `Weighted Ensemble L3` model had the best performance in the third stage of the project, where we created new features and chose some hyperparameters.
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
-TODO: Add your explanation
+The exploratory analysis showed us that the time variable was not in its ideal format, it was classified as an `object`. Thus, we convert its format to `datetime`, and separate the date into month, day, day of the week and time.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-TODO: Add your explanation
+The performance of the model has improved considerably, before we had a score of approximately $1.852$ and with the addition of temporal variables we obtain $0.670$ This means that time is a very important variable for demand forecasting and we must consider it in the model. This conclusion is quite reasonable, considering that we are dealing with a time series.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
