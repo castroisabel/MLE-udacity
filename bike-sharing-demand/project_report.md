@@ -3,10 +3,11 @@
 
 ## Initial Training
 ### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
-TODO: Add your explanation
+
+First of all, competition on Kaggle does not accept negative predictions. Therefore, we must always ensure that our predictions do not have negative values by setting them to 0. Next, we must always send the data in the correct format as specified in the "sampleSubmission.csv" file.
 
 ### What was the top ranked model that performed?
-TODO: Add your explanation
+The Weighted Ensemble L3 model had the best performance in the third stage of the project, where we created new features and chose some hyperparameters.
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
