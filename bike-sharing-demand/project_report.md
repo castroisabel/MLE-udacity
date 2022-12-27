@@ -39,4 +39,6 @@ I would certainly spend more time exploring the data better, and creating new va
 ![model_test_score.png](img/model_test_score.png)
 
 ## Summary
-TODO: Add your explanation
+Overall, I was very pleased with how AutoGluon performed with the data. It is very easy for us to find efficient models, and we can focus more on the quality of the data and features, as well as on the optimization of the hyperparameters.
+
+Thus, I believe that the next steps are to explore the data more efficiently, with graphs and statistical analysis. Then focus on a specific model that performs better, and lastly optimize the hyperparameters of that model to win the competition!
