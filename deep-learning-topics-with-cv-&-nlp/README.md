@@ -23,11 +23,11 @@ I utilized a pretrained ResNet50 and fine-tuned its performance by adjusting the
 
 ![Hyperparameter Tuning](screenshot/hyperparameter_tuning.png)
 
-Remember that your README should:
-- Include a screenshot of completed training jobs
-- Logs metrics during the training process
-- Tune at least two hyperparameters
-- Retrieve the best best hyperparameters from all your training jobs
+The results of the hyperparameter tuning are as follows:
+
+   - Batch size: 64
+   - Epochs: 2
+   - Learning rate: 0.004030880500753202
 
 ## Debugging and Profiling
 **TODO**: Give an overview of how you performed model debugging and profiling in Sagemaker
