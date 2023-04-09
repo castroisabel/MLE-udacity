@@ -52,7 +52,4 @@ After performing profiling and debugging, some suggestions were evaluated:
 - Change the number of data loader processes. 	
 
 ## Model Deployment
-**TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
-
-**TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
-
+Finally, we deployed the endpoint using the "ml.m5.large" instance type along with the "deploy_endpoint.py" script for setup. 
