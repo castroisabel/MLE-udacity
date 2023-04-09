@@ -30,18 +30,29 @@ The results of the hyperparameter tuning are as follows:
    - Learning rate: 0.004030880500753202
 
 ## Debugging and Profiling
-**TODO**: Give an overview of how you performed model debugging and profiling in Sagemaker
+Using the SageMaker Debugger, I created a report that contains data on the model's training, statistics on the resources used and a summary of some metrics.
 
 ### Results
-**TODO**: What are the results/insights did you get by profiling/debugging your model?
+After performing profiling and debugging, some suggestions were evaluated:
 
-**TODO** Remember to provide the profiler html/pdf file in your submission.
+- Check if there are any bottlenecks (CPU, I/O) correlated to the step outliers.
 
+- Choose a different distributed training strategy or a different distributed training framework. 	
+
+- Check if there are bottlenecks, minimize blocking calls, change distributed training strategy, or increase the batch size. 
+
+- Consider increasing the number of data loaders or applying data pre-fetching. 	
+
+- Choose a larger instance type with more memory if footprint is close to maximum available memory. 
+
+- Pre-fetch data or choose different file formats, such as binary formats that improve I/O performance
+
+- The batch size is too small, and GPUs are underutilized. Consider running on a smaller instance type or increasing the batch size. 
+
+- Change the number of data loader processes. 	
 
 ## Model Deployment
 **TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
 **TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
 
-## Standout Suggestions
-**TODO (Optional):** This is where you can provide information about any standout suggestions that you have attempted.
