@@ -53,3 +53,5 @@ After performing profiling and debugging, some suggestions were evaluated:
 
 ## Model Deployment
 Finally, we deployed the endpoint using the "ml.m5.large" instance type along with the "deploy_endpoint.py" script for setup. 
+
+![Endpoint](screenshot/endpoint.png)
