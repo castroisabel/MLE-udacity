@@ -10,12 +10,12 @@ In this project, you will complete the following steps:
 
 ### Step 1: Training and deployment on Sagemaker
 
-- **Created sagemaker notebook instance** 
+- **Created SageMaker notebook instance** 
 I have opted for ml.t3.medium as it provides sufficient capacity to run the notebook.
 
 ![image](screenshots/notebook.png)
 
-- **S3 bucket for the job** (sagemaker-us-east-1-270470084622)
+- **S3 bucket** (sagemaker-us-east-1-270470084622)
 
 ![image](screenshots/s3.png)
 
@@ -33,7 +33,7 @@ The image above displays the EC2 instance along with the terminal running the **
 
 Although the adjusted code in ec2train1.py is quite similar to the code in **train_and_deploy-solution.ipynb**, there are some differences in the modules used. Certain modules can only be used in SageMaker, and much of the EC2 training code has been adapted from the functions defined in the hpo.py starter script. Unlike ec2train.py, which trains a model with specific arguments, hpo.py parses arguments through the command line, enabling it to train multiple models with different hyperparameters.
 
-### Step 3: Step 3: Lambda function setup 
+### Step 3: Step 3: Lambda Function Setup 
 Once the model is trained and deployed, setting up a Lambda function becomes an important next step. Lambda functions play a vital role in enabling access to your model and its inferences by APIs and other programs, making it a crucial step in the production deployment process.
 
 ### Step 4: Lambda security setup and testing 
@@ -74,16 +74,19 @@ Two security policy has been attached to the role :
 
 - **Concurrency**
 
-Setting up concurrency for your Lambda function. Concurrency will make your Lambda function better able to accommodate high traffic because it will enable your function to respond to multiple invocations at once. I reserved 5 instances and provisioned 3 of them.
+Enabling concurrency for your Lambda function can improve its ability to handle high traffic by allowing it to respond to multiple invocations simultaneously. I opted to reserve five instances and provisioned two of them.
 
->  Provisioned concurrency :	computing resources that are available to be used immediately for requests to a Lambda function. Have low cost but The downside is that                                 the maximum is a hard maximum. Thus, if your lambda function recieves more request then their will be latency requests.
+There are two types of concurrency to consider:
 
-> Reserved concurrency	: a set amount of computing resources that are reserved to be used for a Lambda function's concurrency. It creates instances that are always                               on and can reply to all traffic without requiring a wait for start-up times. Thus, have higher cost.
+>  Provisioned concurrency: This involves computing resources that are immediately available for use in response to requests to a Lambda function. It's a low-cost option; however, the maximum number of instances is a hard limit. Therefore, if the Lambda function receives more requests than the maximum number of instances, there may be latency in processing requests.
+
+> Reserved concurrency: This involves a set amount of computing resources that are reserved for a Lambda function's concurrency. The instances are always on and can handle all traffic without requiring start-up times, resulting in higher costs.
+
+As per my configuration:
 
 ```
-reserved instances: 5/1000
-provisioned instances: 3/5
-
+Reserved instances: 5 out of 1000.
+Provisioned instances: 2 out of 5.
 ```
 
 ![image](screenshots/concurrency.png)
@@ -91,14 +94,14 @@ provisioned instances: 3/5
 
 - **Auto-scaling**
 
-Sagemaker endpoints require automatic scaling to respond to high traffic. I enabled auto-scalling. 
+To handle high traffic, automatic scaling is necessary for SageMaker endpoints. Therefore, I enabled auto-scaling and configured it as follows:
 
 ```
-minimum instances: 1
-maximum instances: 3
-target value: 20    // number of simulataneous requests which will trigger scaling
-scale-in time: 30 s
-scale-out time: 30 s
+Minimum instances: 1
+Maximum instances: 3
+Target value: 20 (the number of simultaneous requests that will trigger scaling)
+Scale-in time: 30 seconds
+Scale-out time: 30 seconds.
 ```
 
 ![image](screenshots/autoscalling.png)
